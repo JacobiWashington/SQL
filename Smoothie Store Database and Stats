@@ -1,0 +1,40 @@
+--Create a smoothie store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, smoothies TEXT, section TEXT, price INTEGER, popularity INTEGER);
+
+INSERT INTO store VALUES (1, "Pure Recharge Pineapple", "Energized Blend", 7.65, 30);
+INSERT INTO store VALUES (2, "Gladiator Strawberry", "Get Fit", 8.50, 45);
+INSERT INTO store VALUES (3, "Peanut Power Plus", "Get Fit", 6.99, 50);
+INSERT INTO store VALUES (4, "The Activator Recovery Blueberry", "Get Fit", 8.79, 64);
+INSERT INTO store VALUES (5,"Daily Warrior", "Be Well", 6.29, 55);
+INSERT INTO store VALUES (6, "Banana Boat", "Enjoy A Treat", 9.50, 75);
+INSERT INTO store VALUES (7, "Lean Pineapple Mango", "Manage Weight", 10.59, 20);
+INSERT INTO store VALUES (8, "MangoFest", "Manage Weight", 10.00, 80);
+INSERT INTO store VALUES (9, "X-treme Watermelon", "Featured", 5.69, 20);
+INSERT INTO store VAlUES (10, "High Protein Pineapple", "Get Fit", 7.39, 77);
+INSERT INTO store VALUES (11, "Pure Recharge Strawberry", "Energized Blend", 8.39, 60);
+INSERT INTO store VALUES (12, "The Shredder Chocolate", "Manage Weight", 6.29, 33);
+INSERT INTO store VALUES (13, "Immune Veggie Builder", "Be Well", 10.59, 65);
+INSERT INTO store VALUES (14, "Carribean Way", "Enjoy A Treat", 10.00, 85);
+INSERT INTO store VALUES (15, "X-treme Watermelon Lemonade", "Featured", 9.93,70);
+
+--display the database ordered by price
+SELECT * FROM store
+ORDER BY price;
+
+--what are the most 5 popular smoothies?
+SELECT smoothies, price, popularity
+FROM store
+ORDER BY popularity desc
+limit 5;
+
+--what is the average price of smoothies in the Energized Blend section?
+SELECT AVG (price) "avg energized blend smoothies price"
+FROM STORE
+WHERE section = 'energized blend';
+
+
+
+
+
+
